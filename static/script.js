@@ -1,7 +1,9 @@
+const API_BASE_URL = "https://sentiment-analyzer-one.vercel.app/";  // Change this to your actual URL
+
 async function analyzeSentiment() {
     let text = document.getElementById("userInput").value;
 
-    const response = await fetch('http://localhost:5000/predict', {
+    const response = await fetch(`${API_BASE_URL}/predict`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: text })
@@ -15,7 +17,7 @@ async function analyzeSentiment() {
 }
 
 async function saveToFirebase(sentimentData) {
-    await fetch('http://localhost:5000/save_to_firebase', {
+    await fetch(`${API_BASE_URL}/save_to_firebase`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(sentimentData)
