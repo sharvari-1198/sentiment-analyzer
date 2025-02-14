@@ -1,4 +1,6 @@
-Flask
-tensorflow
+flask
+scikit-learn
+pandas
+joblib
 firebase-admin
 gunicorn
